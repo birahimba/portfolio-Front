@@ -1,0 +1,21 @@
+@media(min-width: 990px){
+
+    li{
+    
+        text-align: center;
+    }
+   
+  li:hover{
+    
+    border-radius: 30px;
+    text-decoration: white;
+    
+  }
+
+  li{
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: white;
+  }
+}
+
