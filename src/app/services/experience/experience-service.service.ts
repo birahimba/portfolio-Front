@@ -14,7 +14,7 @@ export class ExperienceServiceService {
   constructor(private http: HttpClient) {
 
    }
-
+   
   // Http Headers
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,7 +22,13 @@ export class ExperienceServiceService {
     })
   }
  
-//Info sur les profiles
+  updateExperience(id, data): Observable<Experience>{
+    return this.http.put<Experience>(this.baseUrl + '/experience/'+id, JSON.stringify(data),this.httpOptions)
+    .pipe(
+      retry(1)
+    )
+  }
+
   listExperience(): Observable<Experience>{
     return this.http.get<Experience>(this.baseUrl + '/experience/')
     .pipe(
